@@ -19,6 +19,7 @@
           iopenpod = python.pkgs.callPackage ./package.nix {
             wasmtime = wasmtime-py;
             wrapQtAppsHook = pkgs.qt6Packages.wrapQtAppsHook;
+            qt6 = pkgs.qt6;
           };
         in
         {
@@ -50,6 +51,7 @@
           iopenpod = prev.python312Packages.callPackage ./package.nix {
             wasmtime = wasmtime-py;
             wrapQtAppsHook = prev.qt6Packages.wrapQtAppsHook;
+            qt6 = prev.qt6;
           };
         };
     };

@@ -16,6 +16,7 @@
 , tqdm
 , python-dateutil
 , wrapQtAppsHook
+, qt6
 }:
 
 buildPythonApplication rec {
@@ -42,6 +43,9 @@ buildPythonApplication rec {
     hatchling
     wrapQtAppsHook
   ];
+
+  # wrapQtAppsHook requires qt6.qtbase in buildInputs to resolve qtPluginPrefix
+  buildInputs = [ qt6.qtbase ];
 
   propagatedBuildInputs = [
     pyqt6
